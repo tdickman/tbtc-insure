@@ -1,0 +1,12 @@
+import React from 'react';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+export default function Header(props) {
+  return (
+    <Navbar bg="light">
+      <Navbar.Brand href="#/">tbtc.insure</Navbar.Brand>
+    </Navbar>
+  )
+}
