@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Initialize from '../pages/Initialize';
 import Purchase from '../pages/Purchase';
+import Marketplace from '../pages/Marketplace';
 import { useWeb3Context } from "web3-react";
 import { HashRouter } from 'react-router-dom';
 import Header from '../components/Header';
@@ -28,7 +29,7 @@ export default function Routes() {
               Connect with Metamask
             </Button>
           </div>
-          <p style={{textAlign: 'center'}}>Please make sure you have metamask installed and set to the ropsten network</p>
+          <p style={{textAlign: 'center'}}>Please make sure you have metamask installed and set to mainnet</p>
         </div>
       </Container>)}
       {context.active && SUPPORTED_NETWORKS.indexOf(context.networkId) === -1 &&
@@ -37,6 +38,7 @@ export default function Routes() {
       {context.active && <HashRouter>
         <Route path="/" exact component={Initialize} />
         <Route path="/purchase" exact component={Purchase} />
+        <Route path="/marketplace" exact component={Marketplace} />
       </HashRouter>}
     </div>
   );
