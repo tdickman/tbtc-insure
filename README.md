@@ -1,7 +1,11 @@
-# Keep Tools
+# TBTC.insure
 
-A website for displaying information about keep network projects, including
-the random beacon and tbtc.
+A website for purchasing Nexus Mutual insurance as an ERC721 token. Interacts
+with yinsure.finance's contract for purchase. Marketplace for reselling coming
+soon.
+
+Note: Currently running into rate limiting issues when acquiring quotes. A fix
+is in progress.
 
 # Usage
 
