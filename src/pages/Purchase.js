@@ -18,7 +18,7 @@ import Web3Utils from 'web3-utils';
 export default function Purchase(props) {
   const [coverageDays, setCoverageDays] = React.useState('')
   const [amount, setAmount] = React.useState('')
-  const [currency, setCurrency] = React.useState('DAI')
+  const [currency, setCurrency] = React.useState('ETH')
 
   function handleCoverageDaysChange(event) {
     const value = event.target.value
@@ -76,7 +76,6 @@ export default function Purchase(props) {
             id="input-group-dropdown-2"
           >
             <Dropdown.Item onClick={handleSetETH} href="#">ETH</Dropdown.Item>
-            <Dropdown.Item onClick={handleSetDAI} href="#">DAI</Dropdown.Item>
           </DropdownButton>
         </InputGroup>
         <Capacity />
