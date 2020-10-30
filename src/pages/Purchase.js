@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ethers } from 'ethers'
 import connectors from "../Connectors.js";
-import { YINSURE_ADDRESS, YINSURE_ABI, NM_URL, TBTC_COVERAGE_ADDRESS, ERC20_PLACES } from '../config'
+import { YINSURE_ADDRESS, YINSURE_ABI, NM_URL, NM_API_KEY, TBTC_COVERAGE_ADDRESS, ERC20_PLACES } from '../config'
 import { numberWithCommas } from '../utils'
 import { Link } from 'react-router-dom';
 import { useWeb3Context } from "web3-react";
@@ -95,7 +95,7 @@ function Capacity(props) {
 
   React.useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`${NM_URL}/v1/capacities`)
+      const response = await fetch(`${NM_URL}/v1/capacities`, {headers: {'x-api-key': ${NM_API_KEY}}})
       const json = await response.json()
       const capacity = json.find(i => i.contractAddress === TBTC_COVERAGE_ADDRESS.toLowerCase())
       setDaiCapacity(parseInt(capacity.capacityDAI / ERC20_PLACES))
@@ -125,7 +125,7 @@ function Quote(props) {
 
   async function requestQuote() {
     setButtonIsEnabled(false)
-    const response = await fetch(`${NM_URL}/v1/quote?coverAmount=${props.amount}&currency=${props.currency}&period=${props.coverageDays}&contractAddress=${TBTC_COVERAGE_ADDRESS}`)
+    const response = await fetch(`${NM_URL}/v1/quote?coverAmount=${props.amount}&currency=${props.currency}&period=${props.coverageDays}&contractAddress=${TBTC_COVERAGE_ADDRESS}`, {headers: {'x-api-key': ${NM_API_KEY}}})
     const json = await response.json()
     //const json = {"currency":"ETH","period":"50","amount":"50","price":"355920602327173169","priceInNXM":"3452257870084029366","expiresAt":1601516079,"generatedAt":1601515778149,"contract":"0xe20a5c79b39bc8c363f0f49adcfa82c2a01ab64a","v":27,"r":"0x209cd31ef9fe92d51a37d76466b1113bfeb5e702d383fd19f30a32efd1c41ade","s":"0x6d4e270d9e798e984cf5f61a3fc4f6f42f40673088ca00d24603d5b866e50d07"}
     // let json = {"currency":"DAI","period":"30","amount":"2","price":"8542094455852156","priceInNXM":"80041487420872383","expiresAt":1601426633,"generatedAt":1601426332150,"contract":"0x9424b1412450d0f8fc2255faf6046b98213b76bd","v":28,"r":"0xaa4b19165798648294774c5597f4e1c53dcdb6131b7d2e08646170aa0c946302","s":"0x121477b8d7d598d82243e4bbfe2687ada51513ce68da783ef7a15293a98add54"}
