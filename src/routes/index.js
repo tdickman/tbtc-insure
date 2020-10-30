@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Initialize from '../pages/Initialize';
+import Dashboard from '../pages/Dashboard';
 import Purchase from '../pages/Purchase';
 import Marketplace from '../pages/Marketplace';
 import { useWeb3Context } from "web3-react";
@@ -37,6 +38,7 @@ export default function Routes() {
       }
       {context.active && <HashRouter>
         <Route path="/" exact component={Initialize} />
+        <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/purchase" exact component={Purchase} />
         <Route path="/marketplace" exact component={Marketplace} />
       </HashRouter>}
