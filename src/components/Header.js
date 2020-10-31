@@ -11,8 +11,7 @@ export default function Header(props) {
         <Nav className="mr-auto">
           <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
           <Nav.Link href="#/purchase">Purchase</Nav.Link>
-          <Nav.Link href="#/marketplace">Marketplace</Nav.Link>
-          <Nav.Link href="#/instructions">Instructions</Nav.Link>
+          <Nav.Link href="#/about">About</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

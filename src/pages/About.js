@@ -13,7 +13,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import fetch from 'node-fetch';
 
-export default function Instructions(props) {
+export default function About(props) {
   return (
     <Container>
       <h2>Instructions</h2>
