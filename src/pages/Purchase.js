@@ -127,10 +127,10 @@ function Quote(props) {
     setButtonIsEnabled(false)
     const response = await fetch(`${NM_URL}/v1/quote?coverAmount=${props.amount}&currency=${props.currency}&period=${props.coverageDays}&contractAddress=${TBTC_COVERAGE_ADDRESS}`, {headers: {'x-api-key': NM_API_KEY}})
     const json = await response.json()
+    // Use workaround to calculate expiration since expiresAt is invalid
     var date = new Date();
-    date.setDate(date.getDate() + props.coverageDays);
+    date.setDate(date.getDate() + parseInt(props.coverageDays));
     json.expiresAtCorrected = date
-    console.log(json)
     setQuote(json)
   }
 
