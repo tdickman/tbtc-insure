@@ -1,3 +1,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 }
+
+.card {
+  margin-bottom: 12px;
+}
