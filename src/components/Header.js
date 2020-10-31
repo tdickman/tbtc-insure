@@ -12,6 +12,7 @@ export default function Header(props) {
           <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
           <Nav.Link href="#/purchase">Purchase</Nav.Link>
           <Nav.Link href="#/marketplace">Marketplace</Nav.Link>
+          <Nav.Link href="#/instructions">Instructions</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

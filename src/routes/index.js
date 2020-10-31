@@ -4,6 +4,7 @@ import Initialize from '../pages/Initialize';
 import Dashboard from '../pages/Dashboard';
 import Purchase from '../pages/Purchase';
 import Marketplace from '../pages/Marketplace';
+import Instructions from '../pages/Instructions';
 import { useWeb3Context } from "web3-react";
 import { HashRouter } from 'react-router-dom';
 import Header from '../components/Header';
@@ -31,6 +32,7 @@ export default function Routes() {
             </Button>
           </div>
           <p style={{textAlign: 'center'}}>Please make sure you have metamask installed and set to mainnet</p>
+          <p style={{textAlign: 'center'}}>Please read the instructions tab before proceeding</p>
         </div>
       </Container>)}
       {context.active && SUPPORTED_NETWORKS.indexOf(context.networkId) === -1 &&
@@ -41,6 +43,7 @@ export default function Routes() {
         <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/purchase" exact component={Purchase} />
         <Route path="/marketplace" exact component={Marketplace} />
+        <Route path="/instructions" exact component={Instructions} />
       </HashRouter>}
     </div>
   );
