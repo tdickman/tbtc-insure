@@ -17,7 +17,7 @@ export default function Instructions(props) {
   return (
     <Container>
       <h2>Instructions</h2>
-      <p>tbtc.insure provides a way to purchase Nexus Mutual insurance via the yinsure.finance smart contract (<a target="_blank" href="https://etherscan.io/address/0x181Aea6936B407514ebFC0754A37704eB8d98F91">0x181Aea6936B407514ebFC0754A37704eB8d98F91</a>). Purchased insurance is provided via an ERC721 token, which allows users to transfer ownership, and purchase without providing any kyc (a requirement for purchasing directly from Nexus Mutual). In the future this site will provide the ability to freely transfer ownership of tokens.</p>
+      <p>tbtc.insure provides a way to purchase Nexus Mutual insurance via the yinsure.finance smart contract (<a target="_blank" href="https://etherscan.io/address/0x181Aea6936B407514ebFC0754A37704eB8d98F91">0x181Aea6936B407514ebFC0754A37704eB8d98F91</a>). Purchased insurance is provided via an ERC721 token, which allows users to transfer ownership, and purchase without providing any kyc (a requirement for purchasing directly from Nexus Mutual). In the future this site will also provide an interface to buy and sell pre-purchased insurance from other users.</p>
       <p>NOTE: tbtc.insure provides an interface to purchase Nexus Mutual insurance from yinsure.finance, and makes no claims as to what this insurance covers. Please visit <a target="_blank" href="https://yinsure.finance">yinsure.finance</a> and <a target="_blank" href="https://nexusmutual.io/">Nexus Mutual</a> for more details. Don't trust, verify.</p>
     </Container>
   )
