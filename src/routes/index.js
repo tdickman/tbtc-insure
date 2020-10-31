@@ -14,7 +14,6 @@ import { SUPPORTED_NETWORKS } from '../config'
 
 export default function Routes() {
   const context = useWeb3Context();
-  console.log(context)
 
   return (
     <div>
@@ -31,8 +30,7 @@ export default function Routes() {
               Connect with Metamask
             </Button>
           </div>
-          <p style={{textAlign: 'center'}}>Please make sure you have metamask installed and set to mainnet</p>
-          <p style={{textAlign: 'center'}}>Please read the instructions tab before proceeding</p>
+          <p style={{textAlign: 'center'}}>By clicking connect you agree to the terms listed under the instructions tab. Please make sure you have metamask installed and set to mainnet.</p>
         </div>
       </Container>)}
       {context.active && SUPPORTED_NETWORKS.indexOf(context.networkId) === -1 &&
